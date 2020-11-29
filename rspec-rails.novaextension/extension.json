@@ -1,0 +1,23 @@
+{
+    "identifier": "ca.kylefox.rspec-rails",
+    "name": "RSpec Rails",
+    "organization": "Kyle Fox",
+    "description": "Handy stuff for working with RSpec in Ruby on Rails",
+    "version": "0.0.1",
+    "categories": ["commands"],
+    "entitlements": {
+        "process": true,
+        "filesystem": "readonly"
+    },
+    "activationEvents": ["onLanguage:ruby"],
+    "main": "main.js",
+    "commands": {
+        "command-palette": [
+            {
+                "title": "Toggle spec file",
+                "command": "rspec-rails.toggleSpecFile"
+            }
+        ]
+        
+    }
+}
