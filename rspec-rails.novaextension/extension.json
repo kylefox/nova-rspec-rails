@@ -16,6 +16,10 @@
             {
                 "title": "Toggle spec file",
                 "command": "rspec-rails.toggleSpecFile"
+            },
+            {
+                "title": "Run specs for current file",
+                "command": "rspec-rails.runCurrentFile"
             }
         ]
         

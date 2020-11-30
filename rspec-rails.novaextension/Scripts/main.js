@@ -21,3 +21,26 @@ nova.commands.register("rspec-rails.toggleSpecFile", (workspace) => {
   
   workspace.openFile(nova.path.join(...documentPath))
 })
+
+nova.commands.register("rspec-rails.runCurrentFile", (workspace) => {
+  const issues = new IssueCollection('RSpec Rails');
+  issues.clear();
+  console.clear()
+  console.log('Run specs for current file')
+  const file = workspace.activeTextEditor.document.path.replace(workspace.path, '.')
+  const args = `bundle exec rspec ${file} --color`.split(' ')
+  
+  const rspec = new Process("/usr/bin/env", {
+    args: args,
+    cwd: nova.workspace.path,
+  });
+
+  rspec.onStdout((x) => {
+    console.log(x)
+  });
+  rspec.onStderr((x) => {
+    console.error(x)
+  });
+  rspec.start();
+  // rspec.onDidExit(handleResults);
+})
