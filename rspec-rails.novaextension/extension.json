@@ -12,14 +12,24 @@
     "activationEvents": ["onLanguage:ruby"],
     "main": "main.js",
     "commands": {
-        "command-palette": [
+        "editor": [
             {
                 "title": "Toggle spec file",
-                "command": "rspec-rails.toggleSpecFile"
+                "command": "rspec-rails.toggleSpecFile",
+                "shortcut": "cmd-shift-r",
+                "when": "editorHasFocus",
+                "filters": {
+                    "syntaxes": ["ruby"]
+                }
             },
             {
                 "title": "Run specs for current file",
-                "command": "rspec-rails.runCurrentFile"
+                "command": "rspec-rails.runCurrentFile",
+                "shortcut": "cmd-r",
+                "when": "editorHasFocus",
+                "filters": {
+                    "syntaxes": ["ruby"]
+                }
             }
         ]
         
